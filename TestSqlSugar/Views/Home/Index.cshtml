@@ -1,0 +1,35 @@
+﻿@model List<Admins>
+@{
+    Layout = null;
+}
+<style type="text/css">
+    span{
+        margin-left:2em;
+    }
+</style>
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <span>编号</span>
+    <span>登录名</span>
+    <span>姓名</span>
+    <span>登录密码</span><br />
+    @foreach (var ad in Model)
+    {
+        <span>@ad.id</span>
+        <span>@ad.Login</span>
+        <span>@ad.name</span>
+        <span>@ad.Password</span><br />
+    }
+
+    <form method="post" action="Home/Index">
+    <select name="id">
+        @foreach (var item in Model)
+        {
+            <option>@item.id</option>
+        }
+    </select><br />
+        name：<input name="name" /><br />
+        password：<input name="password"/><br />
+        <button type="submit">修改</button>
+    </form>
+</div>

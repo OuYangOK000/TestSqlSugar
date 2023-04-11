@@ -1,0 +1,10 @@
+﻿@model List<Admins>
+@{
+    Layout = null;
+}
+
+@foreach(var ab in Model){
+    <span>
+        @ab.Login
+    </span>
+}

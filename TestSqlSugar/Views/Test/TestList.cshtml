@@ -1,0 +1,30 @@
+﻿@using TestSqlSugar.Models.TestList;
+@model List<TestA>
+@{
+    Layout = null;
+}
+<html>
+<head>
+    <title>linq查询</title>
+    <style type="text/css">
+        span{
+            margin-left:2em;
+        }
+    </style>
+</head>
+<body>
+    
+        <span>学号：</span>
+        <span>姓名：</span>
+        <span>年龄：</span>
+        <span>班级：</span><br />
+    @foreach (var item in Model)
+    {
+        <span>@item.id</span>
+        <span>@item.name</span>
+        <span>@item.age</span>
+        <span>@item.ClassId</span><br />
+    }
+
+</body>
+</html>
